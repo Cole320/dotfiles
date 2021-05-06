@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Set common scripts to vars
-set $rofi ~/scripts/rofi/launch.sh
+set $rofi ~/Scripts/Rofi/launch.sh
 set $music ~/scripts/music/mpv-controller.sh
 
 # Turn borders off
@@ -26,10 +26,6 @@ bindsym $mod+q kill
 bindsym $mod+space exec $rofi appmenu
 bindsym $mod+Tab exec $rofi tabmenu
 bindsym $mod+Shift+e exec $rofi powermenu
-
-# Set up screenshots and partial screenshots
-bindsym --release Print exec maim ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym --release Shift+Print exec maim -s ~/images/scrots/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # Bind audio keys to pactl volume control
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -128,6 +124,10 @@ bindsym $mod+Shift+o exec $music info
 bindsym $mod+Shift+minus exec $music vol -10
 bindsym $mod+Shift+equal exec $music vol 10
 
+# Flameshot screenshot bindings
+bindsym $mod+Print       exec flameshot gui
+bindsym $mod+shift+Print exec flameshot config
+
 # Always float certain windows
 for_window [class="mpv"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -135,6 +135,9 @@ for_window [class="Pavucontrol"] floating enable
 # Make sure fonts are loaded right
 exec_always xset +fp /home/kai/.fonts/
 exec_always xset fp rehash
+
+# Start Flameshot
+exec_always --no-startup-id flameshot &
 
 # Set random startup wallpaper using 
 exec_always --no-startup-id ~/Scripts/Misc/setWallpaper.sh
