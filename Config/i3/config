@@ -100,6 +100,11 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace
 bindsym $mod+Shift+r restart
 
+
+# Lockscreen
+# TODO: fix the backgrounds you dingus :)
+bindsym $mod+l exec betterlockscreen -l
+
 # Add resize keybindings in place of mode
 bindsym $mod+Control+Left resize shrink width 10 px or 10
 bindsym $mod+Control+Down resize grow height 10 px or 10
@@ -139,8 +144,9 @@ exec_always xset fp rehash
 # Start Flameshot
 exec_always --no-startup-id flameshot &
 
-# Set random startup wallpaper using 
+# Set random startup wallpaper being used and setup betterlockscreen 
 exec_always --no-startup-id ~/Scripts/Misc/setWallpaper.sh
+exec_always --no-startup-id betterlockscreen -u ~/Wallpapers/Cache/wallpaper.png
 
 # Allow scripts to interface with dbus
 exec_always --no-startup-id ~/Scripts/Misc/Xdbus.sh
