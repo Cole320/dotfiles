@@ -16,8 +16,8 @@ gaps top 61
 # Drag floating windows
 floating_modifier $mod
 
-# Start a URxvt terminal emulator instance
-bindsym $mod+Return exec urxvt
+# Start a St terminal emulator instance
+bindsym $mod+Return exec st
 
 # Kill focused window
 bindsym $mod+q kill
