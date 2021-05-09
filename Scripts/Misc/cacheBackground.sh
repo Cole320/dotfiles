@@ -69,3 +69,5 @@ done <<<"`xrandr`"
 #Execute ImageMagick:
 eval convert -size ${OUTPUT_IMG_WIDTH}x${OUTPUT_IMG_HEIGHT} 'xc:black' $OUTPUT_IMG
 eval convert $OUTPUT_IMG $PARAMS $OUTPUT_IMG
+eval betterlockscreen -u ~/Wallpapers/Cache/wallpaper.png
+eval notify-send -a "Coal's Rice" 'Lockscreen Set'

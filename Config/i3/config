@@ -1,3 +1,6 @@
+# Welcome Message
+exec_always notify-send -a "Coal's Rice" 'Starting i3' -t 5000
+
 # Set mod variable to super key
 set $mod Mod4
 
@@ -138,20 +141,19 @@ for_window [class="mpv"] floating enable
 for_window [class="Pavucontrol"] floating enable
 
 # Make sure fonts are loaded right
+exec_always notify-send -a "Coal's Rice" 'Loading Fonts' -t 5000
 exec_always xset +fp /home/kai/.fonts/
 exec_always xset fp rehash
 
 # Start Flameshot
+exec_always notify-send -a "Coal's Rice" 'Starting Flameshot' -t 5000 
 exec_always --no-startup-id flameshot &
 
 # Set random startup wallpaper being used and setup betterlockscreen 
 exec_always --no-startup-id ~/Scripts/Misc/setWallpaper.sh
-exec_always --no-startup-id betterlockscreen -u ~/Wallpapers/Cache/wallpaper.png
 
 # Allow scripts to interface with dbus
 exec_always --no-startup-id ~/Scripts/Misc/Xdbus.sh
-
-# Start notification daemon
 
 # Startup daemons for compositor and status bar
 exec_always --no-startup-id pkill picom; picom --no-use-damage
